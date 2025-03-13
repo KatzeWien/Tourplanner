@@ -1,0 +1,36 @@
+﻿using NewVersionOfTourplanner.ViewModel;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace NewVersionOfTourplanner.View
+{
+    /// <summary>
+    /// Interaktionslogik für tourconfig.xaml
+    /// </summary>
+    public partial class tourconfig : UserControl
+    {
+        public tourconfig()
+        {
+            InitializeComponent();
+        }
+
+        private void btnAddTour_click(object sender, RoutedEventArgs e)
+        {
+            var sharedContext = DataContext as TourManagement;
+            AddTour addTour = new AddTour(sharedContext);
+            addTour.ShowDialog();
+        }
+    }
+}
