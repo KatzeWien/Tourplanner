@@ -71,6 +71,9 @@
     <Compile Include="View\tourconfig.xaml.cs">
       <DependentUpon>tourconfig.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\TourDetails.xaml.cs">
+      <DependentUpon>TourDetails.xaml</DependentUpon>
+    </Compile>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -100,6 +103,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\tourconfig.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TourDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

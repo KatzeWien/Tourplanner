@@ -17,10 +17,9 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Button Grid.Row="0" Grid.Column="0">Tours</Button>
+        <TextBlock Grid.Row="0" Grid.Column="0">Tours</TextBlock>
         <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Padding="5" Click="btnAddTour_click">+</Button>
-            <Button Padding="5">-</Button>
         </StackPanel>
     </Grid>
 </UserControl>

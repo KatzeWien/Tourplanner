@@ -21,5 +21,10 @@ namespace NewVersionOfTourplanner.ViewModel
         {
             Tours.Add(tour);
         }
+
+        public void DeleteTour(Tour tour)
+        {
+            Tours.Remove(tour);
+        }
     }
 }

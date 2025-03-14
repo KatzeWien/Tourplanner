@@ -13,30 +13,31 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace NewVersionOfTourplanner.View
 {
     /// <summary>
-    /// Interaktionslogik für ListOfTours.xaml
+    /// Interaktionslogik für TourDetails.xaml
     /// </summary>
-    public partial class ListOfTours : UserControl
+    public partial class TourDetails : Window
     {
-        public ListOfTours()
+        private TourManagement management;
+        public ObservableCollection<Tour> Tours { get; set; }
+        private Tour tour;
+        public TourDetails(TourManagement management, Tour tour)
         {
             InitializeComponent();
+            this.management = management;
+            Tours = this.management.Tours;
+            this.tour = tour;
+            this.DataContext = this.tour;
         }
 
-        private void ButtonOpenDetails_Click(object sender, RoutedEventArgs e)
+        public void ButtonDeleteTour_Click(object sender, RoutedEventArgs e)
         {
-            var sharedContext = DataContext as TourManagement;
-            var button = sender as Button;
-            var content = button.Content;
-            string name = content as string;
-            Tour tour = sharedContext.Tours.FirstOrDefault(p => p.Name == name);
-            TourDetails tourDetails = new TourDetails(sharedContext, tour);
-            tourDetails.ShowDialog();
+            this.management.DeleteTour(this.tour);
+            this.Close();
         }
     }
 }

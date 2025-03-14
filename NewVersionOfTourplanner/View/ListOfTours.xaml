@@ -24,7 +24,7 @@
                     <GridViewColumn Header="Tourname">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Path=Name}"/>
+                                <Button Content="{Binding Path=Name}" Click="ButtonOpenDetails_Click"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
