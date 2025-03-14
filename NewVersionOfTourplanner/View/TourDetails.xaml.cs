@@ -39,5 +39,27 @@ namespace NewVersionOfTourplanner.View
             this.management.DeleteTour(this.tour);
             this.Close();
         }
+
+        public void ButtonCloseWindow_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        public void ButtonChangeTour_Click(object sender, RoutedEventArgs e)
+        {
+            tour.Name = name.Text;
+            tour.Description = description.Text;
+            tour.From = from.Text;
+            tour.To = to.Text;
+            tour.TransportType = transporttype.Text;
+            string inputDistance = tourdistance.Text;
+            int distance;
+            int.TryParse(inputDistance, out distance);
+            tour.TourDistance = distance;
+            string inputTime = estimatedtime.Text;
+            TimeSpan timeSpan;
+            TimeSpan.TryParse(inputTime, out timeSpan);
+            tour.EstimatedTime = timeSpan;
+        }
     }
 }

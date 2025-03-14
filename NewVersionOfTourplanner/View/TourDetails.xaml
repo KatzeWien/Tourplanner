@@ -16,6 +16,8 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -24,13 +26,15 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <TextBox Grid.Row="0" Grid.Column="0" Text="{Binding Path=Name}"></TextBox>
-        <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding Path=Description}"></TextBox>
-        <TextBox Grid.Row="2" Grid.Column="0" Text="{Binding Path=From}"></TextBox>
-        <TextBox Grid.Row="3" Grid.Column="0" Text="{Binding Path=To}"></TextBox>
-        <TextBox Grid.Row="4" Grid.Column="0" Text="{Binding Path=TransportType}"></TextBox>
-        <TextBox Grid.Row="5" Grid.Column="0" Text="{Binding Path=TourDistance}"></TextBox>
-        <TextBox Grid.Row="6" Grid.Column="0" Text="{Binding Path=EstimatedTime}"></TextBox>
+        <TextBox x:Name="name" Grid.Row="0" Grid.Column="0" Text="{Binding Path=Name}"></TextBox>
+        <TextBox x:Name="description" Grid.Row="1" Grid.Column="0" Text="{Binding Path=Description}"></TextBox>
+        <TextBox x:Name="from" Grid.Row="2" Grid.Column="0" Text="{Binding Path=From}"></TextBox>
+        <TextBox x:Name="to" Grid.Row="3" Grid.Column="0" Text="{Binding Path=To}"></TextBox>
+        <TextBox x:Name="transporttype" Grid.Row="4" Grid.Column="0" Text="{Binding Path=TransportType}"></TextBox>
+        <TextBox x:Name="tourdistance" Grid.Row="5" Grid.Column="0" Text="{Binding Path=TourDistance}"></TextBox>
+        <TextBox x:Name="estimatedtime" Grid.Row="6" Grid.Column="0" Text="{Binding Path=EstimatedTime}"></TextBox>
         <Button Grid.Row ="7" Click="ButtonDeleteTour_Click">Delete this tour</Button>
+        <Button Grid.Row ="8" Click="ButtonCloseWindow_Click">Close this window</Button>
+        <Button Grid.Row ="9" Click="ButtonChangeTour_Click">Change Data</Button>
     </Grid>
 </Window>
