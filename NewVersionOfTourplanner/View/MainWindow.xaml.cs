@@ -22,12 +22,15 @@ namespace NewVersionOfTourplanner
     public partial class MainWindow : Window
     {
         public TourManagement Management { get; set; }
+        public TourlogManagement Tourlog {  get; set; }
         public MainWindow()
         {
             InitializeComponent();
             Management = new TourManagement();
+            Tourlog = new TourlogManagement();
             tourconfig.DataContext = Management;
             listOfTours.DataContext = Management;
+            tourlog.DataContext = Tourlog;
         }
     }
 }
