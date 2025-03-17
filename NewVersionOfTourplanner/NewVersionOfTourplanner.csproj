@@ -56,6 +56,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\TourLog.cs" />
+    <Compile Include="ViewModel\AllDataManagement.cs" />
     <Compile Include="ViewModel\TourlogManagement.cs" />
     <Compile Include="ViewModel\TourManagement.cs" />
     <Compile Include="View\AddTour.xaml.cs">
@@ -78,6 +79,12 @@
     </Compile>
     <Compile Include="View\TourlogOutput.xaml.cs">
       <DependentUpon>TourlogOutput.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TourlogWindow.xaml.cs">
+      <DependentUpon>TourlogWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TourWindow.xaml.cs">
+      <DependentUpon>TourWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -116,6 +123,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\TourlogOutput.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TourlogWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TourWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

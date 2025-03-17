@@ -23,14 +23,17 @@ namespace NewVersionOfTourplanner
     {
         public TourManagement Management { get; set; }
         public TourlogManagement Tourlog {  get; set; }
+        public AllDataManagement AllDataManagement { get; set; }
         public MainWindow()
         {
             InitializeComponent();
             Management = new TourManagement();
             Tourlog = new TourlogManagement();
-            tourconfig.DataContext = Management;
+            AllDataManagement = new AllDataManagement();
+            /*tourconfig.DataContext = Management;
             listOfTours.DataContext = Management;
-            tourlog.DataContext = Tourlog;
+            tourlog.DataContext = Tourlog;*/
+            MainFrame.DataContext = AllDataManagement;
         }
     }
 }

@@ -18,9 +18,9 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Button Grid.Column="0">File</Button>
-        <Button Grid.Column="1">Edit</Button>
-        <Button Grid.Column="2">Options</Button>
+        <Button Grid.Column="0" Click="SwitchToHome">Home</Button>
+        <Button Grid.Column="1" Click="SwitchToTour">Tour</Button>
+        <Button Grid.Column="2" Click="SwitchToTourLogs">Tour Log</Button>
         <Button Grid.Column="3"></Button>
         <Button Grid.Column="4"></Button>
         <Button Grid.Column="5">Help</Button>

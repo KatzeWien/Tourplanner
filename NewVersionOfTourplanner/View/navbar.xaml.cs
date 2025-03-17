@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NewVersionOfTourplanner.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,27 @@ namespace NewVersionOfTourplanner.View
         public navbar()
         {
             InitializeComponent();
+        }
+
+        private void SwitchToTour(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = Application.Current.MainWindow as MainWindow;
+            var tourWindow = new TourWindow();
+            tourWindow.DataContext = mainWindow.MainFrame.DataContext;
+            mainWindow?.MainFrame.Navigate(tourWindow);
+        }
+
+        private void SwitchToHome(object sender, RoutedEventArgs e)
+        {
+            //
+        }
+
+        private void SwitchToTourLogs(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = Application.Current.MainWindow as MainWindow;
+            var tourlogWindow = new TourlogWindow();
+            tourlogWindow.DataContext = mainWindow.MainFrame.DataContext;
+            mainWindow?.MainFrame.Navigate(tourlogWindow);
         }
     }
 }
