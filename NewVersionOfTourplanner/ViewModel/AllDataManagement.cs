@@ -10,14 +10,28 @@ namespace NewVersionOfTourplanner.ViewModel
 {
     public class AllDataManagement
     {
-        private TourlogManagement tourlog = new TourlogManagement();
-        private TourManagement tour = new TourManagement();
-        public ObservableCollection<Tour> Tours {  get; set; } 
-        public ObservableCollection<TourLog> Logs { get; set; }
+        public ObservableCollection<Tour> Tours {  get; set; } = new ObservableCollection<Tour>();
+        public ObservableCollection<TourLog> Logs { get; set; } = new ObservableCollection<TourLog>();
         public AllDataManagement()
         {
-            this.Logs = tourlog.TourLogs;
-            this.Tours = tour.Tours;
+            TourLog tourLog = new TourLog(new DateTime(2024, 10, 27, 12, 00, 00), "comment", "easy", 2, new TimeSpan(10, 00, 00), "like");
+            AddTourLog(tourLog);
+            Tour test = new Tour("name2", "desc", "flo", "dorf", "bim", 5, new TimeSpan(10, 00, 00));
+            AddTour(test);
+        }
+        public void AddTourLog(TourLog tourLog)
+        {
+            Logs.Add(tourLog);
+        }
+
+        public void AddTour(Tour tour)
+        {
+            Tours.Add(tour);
+        }
+
+        public void DeleteTour(Tour tour)
+        {
+            Tours.Remove(tour);
         }
     }
 }

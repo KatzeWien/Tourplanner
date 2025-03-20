@@ -57,8 +57,6 @@
     </ApplicationDefinition>
     <Compile Include="Model\TourLog.cs" />
     <Compile Include="ViewModel\AllDataManagement.cs" />
-    <Compile Include="ViewModel\TourlogManagement.cs" />
-    <Compile Include="ViewModel\TourManagement.cs" />
     <Compile Include="View\AddTour.xaml.cs">
       <DependentUpon>AddTour.xaml</DependentUpon>
     </Compile>

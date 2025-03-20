@@ -22,10 +22,10 @@ namespace NewVersionOfTourplanner.View
     /// </summary>
     public partial class TourDetails : Window
     {
-        private TourManagement management;
+        private AllDataManagement management;
         public ObservableCollection<Tour> Tours { get; set; }
         private Tour tour;
-        public TourDetails(TourManagement management, Tour tour)
+        public TourDetails(AllDataManagement management, Tour tour)
         {
             InitializeComponent();
             this.management = management;

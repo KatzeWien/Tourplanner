@@ -30,7 +30,7 @@ namespace NewVersionOfTourplanner.View
 
         private void ButtonOpenDetails_Click(object sender, RoutedEventArgs e)
         {
-            var sharedContext = DataContext as TourManagement;
+            var sharedContext = DataContext as AllDataManagement;
             var button = sender as Button;
             var content = button.Content;
             string name = content as string;

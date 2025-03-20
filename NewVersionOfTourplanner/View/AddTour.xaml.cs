@@ -21,8 +21,8 @@ namespace NewVersionOfTourplanner.View
     /// </summary>
     public partial class AddTour : Window
     {
-        private TourManagement management;
-        public AddTour(TourManagement management)
+        private AllDataManagement management;
+        public AddTour(AllDataManagement management)
         {
             InitializeComponent();
             this.management = management;

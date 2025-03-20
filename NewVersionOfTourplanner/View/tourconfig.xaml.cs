@@ -28,7 +28,7 @@ namespace NewVersionOfTourplanner.View
 
         private void btnAddTour_click(object sender, RoutedEventArgs e)
         {
-            var sharedContext = DataContext as TourManagement;
+            var sharedContext = DataContext as AllDataManagement;
             AddTour addTour = new AddTour(sharedContext);
             addTour.ShowDialog();
         }
