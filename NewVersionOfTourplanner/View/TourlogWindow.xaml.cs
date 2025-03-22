@@ -21,6 +21,7 @@ namespace NewVersionOfTourplanner.View
     /// </summary>
     public partial class TourlogWindow : Page
     {
+        private string tourname = "";
         public TourlogWindow()
         {
             InitializeComponent();
@@ -28,13 +29,19 @@ namespace NewVersionOfTourplanner.View
 
         private void ButtonAddLogs_Click(object sender, RoutedEventArgs e)
         {
-            string tourname = choosentour.Text;
             if (tourname != "")
             {
                 var sharedContext = DataContext as AllDataManagement;
                 AddTourLogs addTour = new AddTourLogs(sharedContext, tourname);
                 addTour.ShowDialog();
             }
+        }
+
+        private void choosentour_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var sharedContext = DataContext as AllDataManagement;
+            tourname = (string)((System.Windows.Controls.ComboBox)sender).SelectedItem;
+            sharedContext.GetLogsBasedOnTourname(tourname);
         }
     }
 }

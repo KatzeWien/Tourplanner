@@ -16,7 +16,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <local:navbar Grid.Row="0"/>
-        <ComboBox x:Name="choosentour" ItemsSource="{Binding TourNames}" Grid.Row="1"/>
+        <ComboBox x:Name="choosentour" ItemsSource="{Binding TourNames}" SelectionChanged="choosentour_SelectionChanged" Grid.Row="1"/>
         <Button Click="ButtonAddLogs_Click" Content="Add Tour Logs" Grid.Row="2"/>
         <local:TourlogOutput Grid.Row="3"/>
     </Grid>

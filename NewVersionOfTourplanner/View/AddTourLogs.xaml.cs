@@ -56,6 +56,7 @@ namespace NewVersionOfTourplanner.View
             }
             TourLog tourLog = new TourLog(this.tourName, date, comment, difficulty, totalDistance, totalTime, rating);
             this.management.AddTourLog(tourLog);
+            this.management.GetLogsBasedOnTourname(this.tourName);
             this.Close();
         }
     }
