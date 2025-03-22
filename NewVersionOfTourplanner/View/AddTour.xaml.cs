@@ -49,6 +49,7 @@ namespace NewVersionOfTourplanner.View
             }
             Tour tour = new Tour(name, description, from, to, transportType, tourDistance, estimatedTime);
             this.management.AddTour(tour);
+            this.management.GetAllTourNames();
             this.Close();
         }
     }

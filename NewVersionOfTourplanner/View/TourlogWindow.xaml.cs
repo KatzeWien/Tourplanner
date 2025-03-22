@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NewVersionOfTourplanner.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,17 @@ namespace NewVersionOfTourplanner.View
         public TourlogWindow()
         {
             InitializeComponent();
+        }
+
+        private void ButtonAddLogs_Click(object sender, RoutedEventArgs e)
+        {
+            string tourname = choosentour.Text;
+            if (tourname != "")
+            {
+                var sharedContext = DataContext as AllDataManagement;
+                AddTourLogs addTour = new AddTourLogs(sharedContext, tourname);
+                addTour.ShowDialog();
+            }
         }
     }
 }
