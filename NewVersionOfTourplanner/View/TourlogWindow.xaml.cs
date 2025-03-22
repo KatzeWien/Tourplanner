@@ -43,5 +43,17 @@ namespace NewVersionOfTourplanner.View
             tourname = (string)((System.Windows.Controls.ComboBox)sender).SelectedItem;
             sharedContext.GetLogsBasedOnTourname(tourname);
         }
+
+        private void ButtonDeleteLog_Click(object sender, RoutedEventArgs e)
+        {
+            var sharedContext = DataContext as AllDataManagement;
+            var listview = logOutput.FindName("logView") as ListView;
+            int indexLog = listview.SelectedIndex;
+            if (indexLog >= 0)
+            {
+                sharedContext.DeleteTourLogBasedOnIndex(indexLog);
+                sharedContext.GetLogsBasedOnTourname(tourname);
+            }
+        }
     }
 }

@@ -60,5 +60,10 @@ namespace NewVersionOfTourplanner.ViewModel
                 SpecialLogs.Add(log);
             }
         }
+
+        public void DeleteTourLogBasedOnIndex(int index)
+        {
+            Logs.RemoveAt(index);
+        }
     }
 }

@@ -14,10 +14,14 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <local:navbar Grid.Row="0"/>
         <ComboBox x:Name="choosentour" ItemsSource="{Binding TourNames}" SelectionChanged="choosentour_SelectionChanged" Grid.Row="1"/>
         <Button Click="ButtonAddLogs_Click" Content="Add Tour Logs" Grid.Row="2"/>
-        <local:TourlogOutput Grid.Row="3"/>
+        <local:TourlogOutput x:Name="logOutput" Grid.Row="3"/>
+        <TextBlock Grid.Row="4">When you want a delete a log press on the row you want to delete and then press the button delete</TextBlock>
+        <Button Click="ButtonDeleteLog_Click" Content="Delete choosen tour log" Grid.Row="5"/>
     </Grid>
 </Page>

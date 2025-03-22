@@ -64,6 +64,11 @@ namespace NewVersionOfTourplanner.View
                     return;
                 }
             }
+            if(name == "" || description == "" || from == "" || to == "" || transportType == "")
+            {
+                MessageBox.Show("All fields needs inputs");
+                return;
+            }
             Tour tour = new Tour(name, description, from, to, transportType, tourDistance, estimatedTime);
             this.management.AddTour(tour);
             this.management.GetAllTourNames();
