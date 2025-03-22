@@ -41,21 +41,44 @@ namespace NewVersionOfTourplanner.View
             string rating = Rating.Text;
             int totalDistance;
             TimeSpan totalTime;
-            DateTime date; 
+            DateTime date;
             if (!int.TryParse(inputTotalDistance, out totalDistance))
             {
                 MessageBox.Show("Only numbers are valid");
+                return;
             }
-            if (!TimeSpan.TryParse(inputTotalTime, out totalTime))
+            if(inputTotalTime.Contains(":"))
             {
-                MessageBox.Show("Only valid time hh:mm");
+                if (!TimeSpan.TryParse(inputTotalTime, out totalTime))
+                {
+                    MessageBox.Show("Only valid time hh:mm or hh!");
+                    return;
+                }
+            }
+            else
+            {
+                if(int.TryParse(inputTotalTime, out int hours))
+                {
+                    totalTime = TimeSpan.FromHours(hours);
+                }
+                else
+                {
+                    MessageBox.Show("Only valid time hh:mm or hh!");
+                    return;
+                }
             }
             if (!DateTime.TryParse(InputDate, out date))
             {
                 MessageBox.Show("Only valid date");
+                return;
             }
-            TourLog tourLog = new TourLog(this.tourName, date, comment, difficulty, totalDistance, totalTime, rating);
-            this.management.AddTourLog(tourLog);
+            if (comment == "" || difficulty == "" || rating == "")
+            {
+                MessageBox.Show("All fields needs inputs");
+                return;
+            }
+            TourLog tourlog = new TourLog(this.tourName, date, comment, difficulty, totalDistance, totalTime, rating);
+            this.management.AddTourLog(tourlog);
             this.management.GetLogsBasedOnTourname(this.tourName);
             this.Close();
         }

@@ -42,10 +42,27 @@ namespace NewVersionOfTourplanner.View
             if (!int.TryParse(inputTourDistance, out tourDistance))
             {
                 MessageBox.Show("Only numbers are valid");
+                return;
             }
-            if (!TimeSpan.TryParse(inputEstimatedTime, out estimatedTime))
+            if (inputEstimatedTime.Contains(":"))
             {
-                MessageBox.Show("Only valid time hh:mm");
+                if (!TimeSpan.TryParse(inputEstimatedTime, out estimatedTime))
+                {
+                    MessageBox.Show("Only valid time hh:mm or hh!");
+                    return;
+                }
+            }
+            else
+            {
+                if (int.TryParse(inputEstimatedTime, out int hours))
+                {
+                    estimatedTime = TimeSpan.FromHours(hours);
+                }
+                else
+                {
+                    MessageBox.Show("Only valid time hh:mm or hh!");
+                    return;
+                }
             }
             Tour tour = new Tour(name, description, from, to, transportType, tourDistance, estimatedTime);
             this.management.AddTour(tour);
