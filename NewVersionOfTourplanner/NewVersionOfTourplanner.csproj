@@ -63,6 +63,9 @@
     <Compile Include="View\AddTourLogs.xaml.cs">
       <DependentUpon>AddTourLogs.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ChangeTourLogs.xaml.cs">
+      <DependentUpon>ChangeTourLogs.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ListOfTours.xaml.cs">
       <DependentUpon>ListOfTours.xaml</DependentUpon>
     </Compile>
@@ -88,6 +91,10 @@
       <DependentUpon>TourWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="View\AddTourLogs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ChangeTourLogs.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

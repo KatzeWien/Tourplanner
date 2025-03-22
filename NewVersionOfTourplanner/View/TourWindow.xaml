@@ -7,15 +7,16 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="TourWindow">
-
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <local:navbar Grid.Row="0"/>
-        <local:tourconfig Grid.Row="1"/>
-        <local:ListOfTours Grid.Row="2"/>
-    </Grid>
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <local:navbar Grid.Row="0"/>
+            <local:tourconfig Grid.Row="1"/>
+            <local:ListOfTours Grid.Row="2"/>
+        </Grid>
+    </ScrollViewer>
 </Page>

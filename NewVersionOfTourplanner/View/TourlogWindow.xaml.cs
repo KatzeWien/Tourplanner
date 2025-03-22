@@ -55,5 +55,17 @@ namespace NewVersionOfTourplanner.View
                 sharedContext.GetLogsBasedOnTourname(tourname);
             }
         }
+
+        private void ButtonChangeLog_Click(object sender, RoutedEventArgs e)
+        {
+            var sharedContext = DataContext as AllDataManagement;
+            var listview = logOutput.FindName("logView") as ListView;
+            int indexLog = listview.SelectedIndex;
+            if (indexLog >= 0)
+            {
+                ChangeTourLogs changeTourLogs = new ChangeTourLogs();
+                changeTourLogs.ShowDialog();
+            }
+        }
     }
 }

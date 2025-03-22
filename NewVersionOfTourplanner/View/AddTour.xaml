@@ -6,23 +6,25 @@
         xmlns:local="clr-namespace:NewVersionOfTourplanner.View"
         mc:Ignorable="d"
         Title="AddTour" Height="450" Width="800">
-    <Grid>
-        <StackPanel>
-            <TextBlock Text="Name"/>
-            <TextBox x:Name="Name"/>
-            <TextBlock Text="Description"/>
-            <TextBox x:Name="Description"/>
-            <TextBlock Text="From"/>
-            <TextBox x:Name="From"/>
-            <TextBlock Text="To"/>
-            <TextBox x:Name="To"/>
-            <TextBlock Text="Transport Type"/>
-            <TextBox x:Name="TransportType"/>
-            <TextBlock Text="Tour Distance"/>
-            <TextBox x:Name="TourDistance"/>
-            <TextBlock Text="Estimated Time"/>
-            <TextBox x:Name="EstimatedTime"/>
-            <Button Click="addValuesBtn_Click">Submit</Button>
-        </StackPanel>
-    </Grid>
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <StackPanel>
+                <TextBlock Text="Name"/>
+                <TextBox x:Name="Name"/>
+                <TextBlock Text="Description"/>
+                <TextBox x:Name="Description"/>
+                <TextBlock Text="From"/>
+                <TextBox x:Name="From"/>
+                <TextBlock Text="To"/>
+                <TextBox x:Name="To"/>
+                <TextBlock Text="Transport Type"/>
+                <TextBox x:Name="TransportType"/>
+                <TextBlock Text="Tour Distance"/>
+                <TextBox x:Name="TourDistance"/>
+                <TextBlock Text="Estimated Time"/>
+                <TextBox x:Name="EstimatedTime"/>
+                <Button Click="addValuesBtn_Click">Submit</Button>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
 </Window>

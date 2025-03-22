@@ -6,19 +6,21 @@
         xmlns:local="clr-namespace:NewVersionOfTourplanner.View"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <local:navbar x:Name="navbar" Grid.Row="0"/>
-        <!--<local:searchbar x:Name="searchbar" Grid.Row="1"/>
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <local:navbar x:Name="navbar" Grid.Row="0"/>
+            <!--<local:searchbar x:Name="searchbar" Grid.Row="1"/>
         <local:tourconfig x:Name="tourconfig" Grid.Row="2"/>
         <local:ListOfTours x:Name="listOfTours" Grid.Row="3"/>
         <local:TourlogOutput x:Name="tourlog" Grid.Row="4"/>-->
-        <Frame Name="MainFrame" NavigationUIVisibility="Hidden"/>
-    </Grid>
+            <Frame Name="MainFrame" NavigationUIVisibility="Hidden"/>
+        </Grid>
+    </ScrollViewer>
 </Window>

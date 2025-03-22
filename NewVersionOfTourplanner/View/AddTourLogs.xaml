@@ -6,21 +6,23 @@
         xmlns:local="clr-namespace:NewVersionOfTourplanner.View"
         mc:Ignorable="d"
         Title="AddTourLogs" Height="450" Width="800">
-    <Grid>
-        <StackPanel>
-            <TextBlock Text="Date"/>
-            <TextBox x:Name="inputDate"/>
-            <TextBlock Text="Comment"/>
-            <TextBox x:Name="Comment"/>
-            <TextBlock Text="Difficulty"/>
-            <TextBox x:Name="Difficulty"/>
-            <TextBlock Text="Total Distance"/>
-            <TextBox x:Name="TotalDistance"/>
-            <TextBlock Text="Total Time"/>
-            <TextBox x:Name="TotalTime"/>
-            <TextBlock Text="Rating"/>
-            <TextBox x:Name="Rating"/>
-            <Button Click="addValuesBtn_Click">Submit</Button>
-        </StackPanel>
-    </Grid>
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <StackPanel>
+                <TextBlock Text="Date"/>
+                <TextBox x:Name="inputDate"/>
+                <TextBlock Text="Comment"/>
+                <TextBox x:Name="Comment"/>
+                <TextBlock Text="Difficulty"/>
+                <TextBox x:Name="Difficulty"/>
+                <TextBlock Text="Total Distance"/>
+                <TextBox x:Name="TotalDistance"/>
+                <TextBlock Text="Total Time"/>
+                <TextBox x:Name="TotalTime"/>
+                <TextBlock Text="Rating"/>
+                <TextBox x:Name="Rating"/>
+                <Button Click="addValuesBtn_Click">Submit</Button>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
 </Window>
