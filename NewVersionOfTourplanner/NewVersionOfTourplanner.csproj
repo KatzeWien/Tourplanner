@@ -67,8 +67,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\Command.cs" />
     <Compile Include="Model\TourLog.cs" />
     <Compile Include="ViewModel\AllDataManagement.cs" />
+    <Compile Include="ViewModel\VMAddTour.cs" />
+    <Compile Include="ViewModel\VMAddTourLog.cs" />
     <Compile Include="View\AddTour.xaml.cs">
       <DependentUpon>AddTour.xaml</DependentUpon>
     </Compile>

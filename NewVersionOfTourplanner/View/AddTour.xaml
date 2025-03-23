@@ -10,20 +10,20 @@
         <Grid>
             <StackPanel>
                 <TextBlock Text="Name"/>
-                <TextBox x:Name="Name"/>
+                <TextBox Text="{Binding NameInput, UpdateSourceTrigger=PropertyChanged}"/>
                 <TextBlock Text="Description"/>
-                <TextBox x:Name="Description"/>
+                <TextBox Text="{Binding DescriptionInput, UpdateSourceTrigger=PropertyChanged}"/>
                 <TextBlock Text="From"/>
-                <TextBox x:Name="From"/>
+                <TextBox Text="{Binding FromInput, UpdateSourceTrigger=PropertyChanged}"/>
                 <TextBlock Text="To"/>
-                <TextBox x:Name="To"/>
+                <TextBox Text="{Binding ToInput, UpdateSourceTrigger=PropertyChanged}"/>
                 <TextBlock Text="Transport Type"/>
-                <TextBox x:Name="TransportType"/>
+                <TextBox Text="{Binding TransportTypeInput, UpdateSourceTrigger=PropertyChanged}"/>
                 <TextBlock Text="Tour Distance"/>
-                <TextBox x:Name="TourDistance"/>
+                <TextBox Text="{Binding TourDistanceInput, UpdateSourceTrigger=PropertyChanged}"/>
                 <TextBlock Text="Estimated Time"/>
-                <TextBox x:Name="EstimatedTime"/>
-                <Button Click="addValuesBtn_Click">Submit</Button>
+                <TextBox Text="{Binding EstimatedTimeInput, UpdateSourceTrigger=PropertyChanged}"/>
+                <Button Command="{Binding AddTour}">Submit</Button>
             </StackPanel>
         </Grid>
     </ScrollViewer>

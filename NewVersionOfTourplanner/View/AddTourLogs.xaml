@@ -10,18 +10,18 @@
         <Grid>
             <StackPanel>
                 <TextBlock Text="Date"/>
-                <TextBox x:Name="inputDate"/>
+                <TextBox Text="{Binding DateInput}"/>
                 <TextBlock Text="Comment"/>
-                <TextBox x:Name="Comment"/>
+                <TextBox Text="{Binding CommentInput}"/>
                 <TextBlock Text="Difficulty"/>
-                <TextBox x:Name="Difficulty"/>
+                <TextBox Text="{Binding DifficultyInput}"/>
                 <TextBlock Text="Total Distance"/>
-                <TextBox x:Name="TotalDistance"/>
+                <TextBox Text="{Binding TotalDistanceInput}"/>
                 <TextBlock Text="Total Time"/>
-                <TextBox x:Name="TotalTime"/>
+                <TextBox Text="{Binding TotalTimeInput}"/>
                 <TextBlock Text="Rating"/>
-                <TextBox x:Name="Rating"/>
-                <Button Click="addValuesBtn_Click">Submit</Button>
+                <TextBox Text="{Binding RatingInput}"/>
+                <Button Command="{Binding AddTourLog}">Submit</Button>
             </StackPanel>
         </Grid>
     </ScrollViewer>
