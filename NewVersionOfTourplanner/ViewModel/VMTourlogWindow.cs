@@ -18,6 +18,7 @@ namespace NewVersionOfTourplanner.ViewModel
         public ObservableCollection<string> TourNames { get; }
         public ObservableCollection<TourLog> SpecialLogs { get; set; }
         private string selectedItem;
+        private int selectedIndex;
         public string SelectedItem
         {
             get => selectedItem; set
@@ -26,6 +27,7 @@ namespace NewVersionOfTourplanner.ViewModel
                 OnPropertyChanged(nameof(SelectedItem)); DataManagement.GetLogsBasedOnTourname(SelectedItem);
             }
         }
+        public int SelectedIndex { get => selectedIndex; set {selectedIndex = value; OnPropertyChanged(nameof(SelectedIndex)); } }
         public VMTourlogWindow(AllDataManagement dataManagement)
         {
             this.DataManagement = dataManagement;
@@ -49,6 +51,21 @@ namespace NewVersionOfTourplanner.ViewModel
                     {
                         AddTourLogs addTour = new AddTourLogs(DataManagement, SelectedItem);
                         addTour.ShowDialog();
+                    }
+                });
+            }
+        }
+
+        public ICommand RemoveLogs
+        {
+            get 
+            {
+                return new Command(obj =>
+                {
+                    if(SelectedIndex >= 0)
+                    {
+                        DataManagement.DeleteTourLogBasedOnIndex(SelectedIndex);
+                        DataManagement.GetLogsBasedOnTourname(SelectedItem);
                     }
                 });
             }

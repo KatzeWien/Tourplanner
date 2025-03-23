@@ -14,7 +14,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <ListView ItemsSource="{Binding SpecialLogs}" Grid.Row="0" Grid.Column="0" x:Name="logView">
+        <ListView ItemsSource="{Binding SpecialLogs}" SelectedIndex="{Binding SelectedIndex}" Grid.Row="0" Grid.Column="0" x:Name="logView">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Date and Time">
