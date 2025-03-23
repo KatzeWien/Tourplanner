@@ -31,17 +31,6 @@ namespace NewVersionOfTourplanner.View
             this.dataManagement = dataManagement;
         }
 
-        private void ButtonDeleteLog_Click(object sender, RoutedEventArgs e)
-        {
-            var listview = logOutput.FindName("logView") as ListView;
-            int indexLog = listview.SelectedIndex;
-            if (indexLog >= 0)
-            {
-                dataManagement.DeleteTourLogBasedOnIndex(indexLog);
-                dataManagement.GetLogsBasedOnTourname(tourname);
-            }
-        }
-
         private void ButtonChangeLog_Click(object sender, RoutedEventArgs e)
         {
             var sharedContext = DataContext as AllDataManagement;
