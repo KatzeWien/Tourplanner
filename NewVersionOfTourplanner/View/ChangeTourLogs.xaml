@@ -14,10 +14,20 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
-                <TextBlock Text="Definition" Margin="5"/>
-                <TextBlock Text="OldValue" Margin="5"/>
-                <TextBox Text="NewValue" Margin="5"/>
+            <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0">
+                <TextBlock Text="Date"/>
+                <TextBox Text="{Binding DateInput}"/>
+                <TextBlock Text="Comment"/>
+                <TextBox Text="{Binding CommentInput}"/>
+                <TextBlock Text="Difficulty"/>
+                <TextBox Text="{Binding DifficultyInput}"/>
+                <TextBlock Text="Total Distance"/>
+                <TextBox Text="{Binding TotalDistanceInput}"/>
+                <TextBlock Text="Total Time"/>
+                <TextBox Text="{Binding TotalTimeInput}"/>
+                <TextBlock Text="Rating"/>
+                <TextBox Text="{Binding RatingInput}"/>
+                <Button Command="{Binding ChangeTourLog}">Change Data</Button>
             </StackPanel>
         </Grid>
     </ScrollViewer>

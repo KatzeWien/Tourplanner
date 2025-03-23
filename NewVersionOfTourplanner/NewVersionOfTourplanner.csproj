@@ -70,6 +70,7 @@
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Model\TourLog.cs" />
     <Compile Include="ViewModel\AllDataManagement.cs" />
+    <Compile Include="ViewModel\VMChangeTourLog.cs" />
     <Compile Include="ViewModel\VMTourDetails.cs" />
     <Compile Include="ViewModel\VMAddTour.cs" />
     <Compile Include="ViewModel\VMAddTourLog.cs" />

@@ -62,10 +62,27 @@ namespace NewVersionOfTourplanner.ViewModel
             {
                 return new Command(obj =>
                 {
-                    if(SelectedIndex >= 0)
+                    if(SelectedIndex >= 0 && SelectedItem != null)
                     {
                         DataManagement.DeleteTourLogBasedOnIndex(SelectedIndex);
                         DataManagement.GetLogsBasedOnTourname(SelectedItem);
+                    }
+                });
+            }
+        }
+
+        public ICommand ChangeLog
+        {
+            get
+            {
+                return new Command(obj =>
+                {
+                    if (SelectedIndex >= 0 && SelectedItem != null)
+                    {
+                        TourLog searchedRow = SpecialLogs[SelectedIndex];
+                        int index = DataManagement.Logs.IndexOf(searchedRow);
+                        ChangeTourLogs changeTourLogs = new ChangeTourLogs(DataManagement, index);
+                        changeTourLogs.ShowDialog();
                     }
                 });
             }

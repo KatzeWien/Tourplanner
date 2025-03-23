@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NewVersionOfTourplanner.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,16 @@ namespace NewVersionOfTourplanner.View
     /// </summary>
     public partial class ChangeTourLogs : Window
     {
-        public ChangeTourLogs()
+        public ChangeTourLogs(AllDataManagement dataManagement, int indexSelectedTour)
         {
             InitializeComponent();
+            var viewModel = new ViewModel.VMChangeTourLog(dataManagement, indexSelectedTour);
+            viewModel.SaveSucceeded += (s, e) =>
+            {
+                this.DialogResult = true;
+                this.Close();
+            };
+            this.DataContext = viewModel;
         }
     }
 }
