@@ -23,74 +23,21 @@ namespace NewVersionOfTourplanner.View
     /// </summary>
     public partial class TourDetails : Window
     {
-        private AllDataManagement management;
-        public ObservableCollection<Tour> Tours { get; set; }
-        private Tour tour;
         public TourDetails(AllDataManagement management, Tour tour)
         {
             InitializeComponent();
-            this.management = management;
-            Tours = this.management.Tours;
-            this.tour = tour;
-            this.DataContext = this.tour;
-        }
-
-        public void ButtonDeleteTour_Click(object sender, RoutedEventArgs e)
-        {
-            this.management.DeleteTour(this.tour);
-            this.Close();
+            var viewModel = new ViewModel.VMTourDetails(management, tour);
+            viewModel.SaveSucceeded += (s, e) =>
+            {
+                this.DialogResult = true;
+                this.Close();
+            };
+            this.DataContext = viewModel;
         }
 
         public void ButtonCloseWindow_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-        }
-
-        public void ButtonChangeTour_Click(object sender, RoutedEventArgs e)
-        {
-            bool isInputValid = true;
-            string inputName = name.Text;
-            string inputDescription = description.Text;
-            string inputFrom = from.Text;
-            string inputTo = to.Text;
-            string inputTransporttype = transporttype.Text;
-            string inputDistance = tourdistance.Text;
-            int distance;
-            if (!int.TryParse(inputDistance, out distance))
-            {
-                MessageBox.Show("Only numbers are valid");
-                isInputValid = false;
-                return;
-            }
-            string inputTime = estimatedtime.Text;
-            TimeSpan timeSpan;
-            if(!TimeSpan.TryParse(inputTime, out timeSpan))
-            {
-                MessageBox.Show("Only numbers are valid");
-                isInputValid = false;
-                return;
-            }
-            if (inputTime == "" || inputDescription == "" || inputFrom == "" || inputTo == "" || inputTransporttype == "")
-            {
-                MessageBox.Show("All fields needs inputs");
-                isInputValid = false;
-                return;
-            }
-            if (isInputValid == true)
-            {
-                ChangeData(inputName, inputDescription, inputFrom, inputTo, inputTransporttype, distance, timeSpan);
-            }
-        }
-
-        public void ChangeData(string name, string description, string from, string to, string transporttype, int distance, TimeSpan timeSpan)
-        {
-            tour.Name = name;
-            tour.Description = description;
-            tour.From = from;
-            tour.To = to;
-            tour.TransportType = transporttype;
-            tour.TourDistance = distance;
-            tour.EstimatedTime = timeSpan;
         }
     }
 }

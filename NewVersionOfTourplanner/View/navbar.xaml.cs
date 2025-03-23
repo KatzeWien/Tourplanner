@@ -29,7 +29,8 @@ namespace NewVersionOfTourplanner.View
         private void SwitchToTour(object sender, RoutedEventArgs e)
         {
             var mainWindow = Application.Current.MainWindow as MainWindow;
-            var tourWindow = new TourWindow();
+            var dataManagement = mainWindow.MainFrame.DataContext as AllDataManagement;
+            var tourWindow = new TourWindow(dataManagement);
             tourWindow.DataContext = mainWindow.MainFrame.DataContext;
             mainWindow?.MainFrame.Navigate(tourWindow);
         }
@@ -42,8 +43,8 @@ namespace NewVersionOfTourplanner.View
         private void SwitchToTourLogs(object sender, RoutedEventArgs e)
         {
             var mainWindow = Application.Current.MainWindow as MainWindow;
-            var tourlogWindow = new TourlogWindow();
-            tourlogWindow.DataContext = mainWindow.MainFrame.DataContext;
+            var dataManagement = mainWindow.MainFrame.DataContext as AllDataManagement;
+            var tourlogWindow = new TourlogWindow(dataManagement);
             mainWindow?.MainFrame.Navigate(tourlogWindow);
         }
     }

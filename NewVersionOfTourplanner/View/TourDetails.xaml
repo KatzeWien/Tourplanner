@@ -25,18 +25,18 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="name" Grid.Row="0" Grid.Column="0" Text="{Binding Path=Name}"></TextBox>
-        <TextBox x:Name="description" Grid.Row="1" Grid.Column="0" Text="{Binding Path=Description}"></TextBox>
-        <TextBox x:Name="from" Grid.Row="2" Grid.Column="0" Text="{Binding Path=From}"></TextBox>
-        <TextBox x:Name="to" Grid.Row="3" Grid.Column="0" Text="{Binding Path=To}"></TextBox>
-        <TextBox x:Name="transporttype" Grid.Row="4" Grid.Column="0" Text="{Binding Path=TransportType}"></TextBox>
-        <TextBox x:Name="tourdistance" Grid.Row="5" Grid.Column="0" Text="{Binding Path=TourDistance}"></TextBox>
-        <TextBox x:Name="estimatedtime" Grid.Row="6" Grid.Column="0" Text="{Binding Path=EstimatedTime}"></TextBox>
+        <TextBox x:Name="name" Grid.Row="0" Grid.Column="0" Text="{Binding NameInput, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <TextBox x:Name="description" Grid.Row="1" Grid.Column="0" Text="{Binding DescriptionInput, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <TextBox x:Name="from" Grid.Row="2" Grid.Column="0" Text="{Binding FromInput, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <TextBox x:Name="to" Grid.Row="3" Grid.Column="0" Text="{Binding ToInput, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <TextBox x:Name="transporttype" Grid.Row="4" Grid.Column="0" Text="{Binding TransportTypeInput, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <TextBox x:Name="tourdistance" Grid.Row="5" Grid.Column="0" Text="{Binding TourDistanceInput, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <TextBox x:Name="estimatedtime" Grid.Row="6" Grid.Column="0" Text="{Binding EstimatedTimeInput, UpdateSourceTrigger=PropertyChanged}"></TextBox>
         <Image Source="https://lh3.googleusercontent.com/T1GrZUsdVEeZhUu9cCHivhEBh536MDTvFsJi_0ZDdjpBeRjt3YX-EmMqG4x_Ms4L2rBxKEUilGx5Lu_0c5i4rNDwvqzs9MJdTG6Cs1I=w1533" 
                Grid.Row="7" Grid.Column="0"/>
-        <Button Grid.Row ="8" Click="ButtonDeleteTour_Click">Delete this tour</Button>
+        <Button Grid.Row ="8" Command="{Binding DeleteTour}">Delete this tour</Button>
         <Button Grid.Row ="9" Click="ButtonCloseWindow_Click">Close this window</Button>
-        <Button Grid.Row ="10" Click="ButtonChangeTour_Click">Change Data</Button>
+        <Button Grid.Row ="10" Command="{Binding ChangeTour}">Change Data</Button>
     </Grid>
     </ScrollViewer>
 </Window>

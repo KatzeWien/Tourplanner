@@ -22,37 +22,23 @@ namespace NewVersionOfTourplanner.View
     public partial class TourlogWindow : Page
     {
         private string tourname = "";
-        public TourlogWindow()
+        public AllDataManagement dataManagement;
+        public TourlogWindow(AllDataManagement dataManagement)
         {
             InitializeComponent();
-        }
-
-        private void ButtonAddLogs_Click(object sender, RoutedEventArgs e)
-        {
-            if (tourname != "")
-            {
-                var sharedContext = DataContext as AllDataManagement;
-                AddTourLogs addTour = new AddTourLogs(sharedContext, tourname);
-                addTour.ShowDialog();
-            }
-        }
-
-        private void choosentour_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var sharedContext = DataContext as AllDataManagement;
-            tourname = (string)((System.Windows.Controls.ComboBox)sender).SelectedItem;
-            sharedContext.GetLogsBasedOnTourname(tourname);
+            var viewModel = new ViewModel.VMTourlogWindow(dataManagement);
+            DataContext = viewModel;
+            this.dataManagement = dataManagement;
         }
 
         private void ButtonDeleteLog_Click(object sender, RoutedEventArgs e)
         {
-            var sharedContext = DataContext as AllDataManagement;
             var listview = logOutput.FindName("logView") as ListView;
             int indexLog = listview.SelectedIndex;
             if (indexLog >= 0)
             {
-                sharedContext.DeleteTourLogBasedOnIndex(indexLog);
-                sharedContext.GetLogsBasedOnTourname(tourname);
+                dataManagement.DeleteTourLogBasedOnIndex(indexLog);
+                dataManagement.GetLogsBasedOnTourname(tourname);
             }
         }
 

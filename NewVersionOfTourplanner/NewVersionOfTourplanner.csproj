@@ -70,8 +70,11 @@
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Model\TourLog.cs" />
     <Compile Include="ViewModel\AllDataManagement.cs" />
+    <Compile Include="ViewModel\VMTourDetails.cs" />
     <Compile Include="ViewModel\VMAddTour.cs" />
     <Compile Include="ViewModel\VMAddTourLog.cs" />
+    <Compile Include="ViewModel\VMTourlogWindow.cs" />
+    <Compile Include="ViewModel\VMTourWindow.cs" />
     <Compile Include="View\AddTour.xaml.cs">
       <DependentUpon>AddTour.xaml</DependentUpon>
     </Compile>
