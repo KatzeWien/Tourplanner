@@ -25,7 +25,9 @@
                         <GridViewColumn Header="Tourname">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button Content="{Binding Path=Name}" Click="ButtonOpenDetails_Click"/>
+                                    <Button Content="{Binding Path=Name}" 
+                                    Command="{Binding DataContext.OpenDetails, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                    CommandParameter="{Binding Path=Name}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

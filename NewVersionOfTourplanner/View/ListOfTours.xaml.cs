@@ -27,16 +27,5 @@ namespace NewVersionOfTourplanner.View
         {
             InitializeComponent();
         }
-
-        private void ButtonOpenDetails_Click(object sender, RoutedEventArgs e)
-        {
-            var sharedContext = DataContext as AllDataManagement;
-            var button = sender as Button;
-            var content = button.Content;
-            string name = content as string;
-            Tour tour = sharedContext.Tours.FirstOrDefault(p => p.Name == name);
-            TourDetails tourDetails = new TourDetails(sharedContext, tour);
-            tourDetails.ShowDialog();
-        }
     }
 }
